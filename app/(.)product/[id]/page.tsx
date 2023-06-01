@@ -5,15 +5,14 @@ import { Dialog } from '@headlessui/react'
 import { StarIcon as StarIconOutLine } from '@heroicons/react/24/outline'
 import { StarIcon } from '@heroicons/react/24/solid'
 import { useParams } from 'next/navigation'
+import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
 function Modal() {
   let [isOpen, setIsOpen] = useState(true)
   const id = useParams().id
   const [product, setProduct] = useState<Product>()
-  {
-    /*const router = useRouter()*/
-  }
+  const router = useRouter()
   {
     /*<--'useRouter' at the moment of building wasn't workin, so isn't declared-->*/
   }
@@ -86,6 +85,7 @@ function Modal() {
                     Adicionar ao carrinho
                   </button>
                   {/*<--'useRouter' at the moment of building wasn't workin, so isn't declared-->*/}
+
                   <button
                     onClick={() => router.push(`/product/${product?.id}`)}
                     className="bg-white text-blue-600 w-full rounded-full border border-blue-600 hover:bg-blue-600 hover:text-white"
